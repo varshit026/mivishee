@@ -3,25 +3,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import FoodItems from './components/food'
+import ErrorMSG from './components/errormsg'
 
 function App() {
- 
-  //let fooditems=["Dal","b", "c", "d", "e"]
-  let fooditems=[]
-
-  return (
-    <>
-    <h1>List of Food Items</h1>
-    {/* {fooditems.length==0 ? <h3> hungry hu</h3> : null} */}
-    {fooditems.length==0 && <h3>bhookha hu</h3>}
-    <ul className="list-group">
-    {fooditems.map((items) => <li className="list-group-item" key={items}>{items}</li> )}
   
-</ul>
-    </>
+  let foodItems=["Dal", "A", "B", "C", "D", "E"];
 
-  )
+  return(
+    <>
+   <h1>List of Food Items</h1>
+    <ErrorMSG Items={foodItems}></ErrorMSG>
+
+    <FoodItems items={foodItems}></FoodItems>
+    </>
+    )
 }
 
 export default App
